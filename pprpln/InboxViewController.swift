@@ -29,6 +29,14 @@ class InboxViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         loadMessages()
+//        for i in 0..<messages.count {
+//            
+//            
+//            if messages[i].deleted == false {
+//                allMessages += [messages[i]]
+//            }
+//            
+//        }
         allMessages = messages
         
 
@@ -39,6 +47,18 @@ class InboxViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         tableView.tableFooterView = UIView()
         self.title = "Messages"
+        
+        self.navigationItem.rightBarButtonItem?.image = UIImage(named:"Heart.png")!.imageWithRenderingMode(.AlwaysOriginal)
+        
+        
+//
+////        let backButton = UIBarButtonItem(title: "< Back", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+////        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Chalkduster", size: 20)!], forState: UIControlState.Normal)
+//        let backButton = UIBarButtonItem(image: backArrow, style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+//        backButton.setBackgroundImage(backArrow, forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
+//        navigationItem.backBarButtonItem = backButton
+        
+//        self.navigationItem.backBarButtonItem = UIBarButtonItem(image: backArrow, style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     
         
 
@@ -47,20 +67,20 @@ class InboxViewController: UIViewController, UITableViewDataSource, UITableViewD
     func loadMessages() {
         let photo1 = UIImage(named: "Avatar")!
         
-        let inspiration1 = UIImage(named: "face1")!
+        let inspiration1 = UIImage(named: "Inspiration1")!
 
         
-        let message1 = Message(username: "zack", photo: photo1, content: "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.", messageImage: inspiration1, liked: false, forwarded: false)
+        let message1 = Message(username: "zack", photo: photo1, content: "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.", messageImage: inspiration1, liked: false, forwarded: false, deleted: false)
         
         let photo2 = UIImage(named: "Avatar2")!
-        let inspiration2 = UIImage(named: "face1")
+        let inspiration2 = UIImage(named: "Inspiration1")
 
-        let message2 = Message(username: "Mark T.", photo: photo2, content: "Either you run the day or the day runs you.", messageImage: inspiration2, liked: false, forwarded: false)
+        let message2 = Message(username: "Mark T.", photo: photo2, content: "Either you run the day or the day runs you.", messageImage: inspiration2, liked: false, forwarded: false, deleted: false)
         
         let photo3 = UIImage(named: "face3")!
         let inspiration3 = UIImage(named: "face1")
         
-        let message3 = Message(username: "User3", photo: photo3, content: "Accept the challenges so that you can feel the exhilaration of victory.", messageImage: inspiration3, liked: true, forwarded: false)
+        let message3 = Message(username: "User3", photo: photo3, content: "Accept the challenges so that you can feel the exhilaration of victory.", messageImage: inspiration3, liked: true, forwarded: false, deleted: false)
         messages += [message1, message2, message3]
         
         
@@ -108,6 +128,8 @@ class InboxViewController: UIViewController, UITableViewDataSource, UITableViewD
         let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
         let selectedMessage = messages[indexPath!.row]
         
+        destinationViewController.inboxViewController = self
+        
         destinationViewController.view.layoutIfNeeded()
         destinationViewController.imageView.image = selectedMessage.messageImage
         
@@ -119,6 +141,15 @@ class InboxViewController: UIViewController, UITableViewDataSource, UITableViewD
         destinationViewController.transitioningDelegate = fadeTransition
         
         fadeTransition.duration = 1
+        
+        let backItem = UIBarButtonItem()
+        let backArrow = UIImage(named: "Back Arrow")
+        backItem.title = ""
+        backItem.setBackButtonBackgroundImage(backArrow, forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
+        navigationItem.backBarButtonItem = backItem
+        
+        UINavigationBar.appearance().barTintColor = UIColor(white: 0.0, alpha: 1.0)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -181,8 +212,9 @@ class InboxViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let selectedIndexPath = tableView.indexPathForSelectedRow
         messages.removeAtIndex(selectedIndexPath!.row)
+        allMessages = messages
             
-        tableView.deleteRowsAtIndexPaths([selectedIndexPath!], withRowAnimation: .None)
+        tableView.deleteRowsAtIndexPaths([selectedIndexPath!], withRowAnimation: .Fade)
                     
                     
     }

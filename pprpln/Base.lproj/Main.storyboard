@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="wSy-k8-dl8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ihg-ir-K5y">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
+        <!--Receive Message View Controller-->
+        <scene sceneID="aV4-RY-mns">
+            <objects>
+                <viewController id="chX-so-rOv" customClass="ReceiveMessageViewController" customModule="pprpln" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1iS-Lq-zKC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="gWj-A2-mxF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.3140654625" blue="0.85719929009999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3FB-Bw-Ek4">
+                        <barButtonItem key="rightBarButtonItem" width="58" style="plain" id="gKe-5T-UAL">
+                            <connections>
+                                <segue destination="R2P-BT-Gkl" kind="push" id="gDs-V9-c4Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lNG-X2-6Yf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="1897"/>
+        </scene>
         <!--Inbox View Controller-->
         <scene sceneID="5iH-Gm-naH">
             <objects>
@@ -75,7 +103,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Pzm-7R-17g">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="OVq-Q9-md9">
+                        <barButtonItem key="rightBarButtonItem" image="Heart" id="OVq-Q9-md9">
                             <connections>
                                 <action selector="onFavoriteButton:" destination="R2P-BT-Gkl" id="tAr-GG-hxm"/>
                             </connections>
@@ -89,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2SV-Ag-PJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="1552"/>
+            <point key="canvasLocation" x="1261" y="1552"/>
         </scene>
         <!--Message Details View Controller-->
         <scene sceneID="2X3-5x-FaU">
@@ -115,23 +143,23 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="TMi-rl-zJo">
-                                <rect key="frame" x="0.0" y="59" width="320" height="509"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="US2-XJ-f4n">
-                                <rect key="frame" x="27" y="493" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="onTapFlagButton:" destination="tl9-Bs-dS0" eventType="touchUpInside" id="Vm7-ES-gtg"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ch3-SY-ecd">
-                                <rect key="frame" x="257" y="484" width="43" height="48"/>
+                                <rect key="frame" x="262" y="512" width="43" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Airplane"/>
+                                <state key="normal" image="Airplane1"/>
                                 <connections>
                                     <action selector="onTapFowardButton:" destination="tl9-Bs-dS0" eventType="touchUpInside" id="py9-Xa-UDZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="US2-XJ-f4n">
+                                <rect key="frame" x="25" y="520" width="36" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Flag"/>
+                                <connections>
+                                    <action selector="onTapFlagButton:" destination="tl9-Bs-dS0" eventType="touchUpInside" id="Vm7-ES-gtg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -144,30 +172,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wN-y7-WET" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1231" y="1552"/>
+            <point key="canvasLocation" x="1763" y="1552"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="0vI-08-aeJ">
+        <scene sceneID="pA2-5A-qMU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wSy-k8-dl8" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ihg-ir-K5y" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gZo-xY-qRh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YAg-gE-DvF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="BNy-em-wI4">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="R2P-BT-Gkl" kind="relationship" relationship="rootViewController" id="HHz-Yy-Xue"/>
+                        <segue destination="chX-so-rOv" kind="relationship" relationship="rootViewController" id="95C-Es-jVB"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vpO-gr-JVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ab2-Ka-7SV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="87" y="1552"/>
+            <point key="canvasLocation" x="100" y="2095"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Airplane" width="43" height="48"/>
+        <image name="Airplane1" width="48" height="43"/>
         <image name="Back Arrow" width="33" height="22"/>
+        <image name="Flag" width="36" height="32"/>
         <image name="Heart" width="26" height="24"/>
         <image name="Heart Unfilled" width="28" height="27"/>
     </resources>

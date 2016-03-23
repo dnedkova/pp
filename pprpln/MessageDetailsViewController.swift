@@ -20,6 +20,7 @@ class MessageDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         imageView.image = image
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,12 +33,24 @@ class MessageDetailsViewController: UIViewController {
     }
 
     @IBAction func onTapFlagButton(sender: UIButton) {
-        sender.selected = !sender.selected
         
-        navigationController?.popViewControllerAnimated(true)
-       
+        let alertController = UIAlertController(title: "Flag as spam or abusive", message: "Note: Once you have reported the message, it will be deleted from your Messages inbox.", preferredStyle: .ActionSheet)
+        let logoutAction = UIAlertAction(title: "Flag message", style: .Destructive) { (action) in
+            self.navigationController?.popViewControllerAnimated(true)
+            
+            
+            self.inboxViewController.onTapFlagButton(sender)
+        }
         
-        inboxViewController.onTapFlagButton(sender)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        
+        alertController.addAction(logoutAction)
+        alertController.addAction(cancelAction)
+        presentViewController(alertController, animated: true, completion: nil)
+
+        
+      
     }
     
     

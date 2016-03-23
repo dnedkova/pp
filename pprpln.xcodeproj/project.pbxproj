@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA0BAB3C1C9F999E00A57216 /* ReceiveMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0BAB3B1C9F999E00A57216 /* ReceiveMessageViewController.swift */; };
 		CA4F9D7F1C95528600B55111 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4F9D7D1C95528600B55111 /* InboxViewController.swift */; };
 		CA4F9D801C95528600B55111 /* InboxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4F9D7E1C95528600B55111 /* InboxViewController.xib */; };
 		CA4F9D821C96776B00B55111 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4F9D811C96776B00B55111 /* MessageCell.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA0BAB3B1C9F999E00A57216 /* ReceiveMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveMessageViewController.swift; sourceTree = "<group>"; };
 		CA4F9D7D1C95528600B55111 /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		CA4F9D7E1C95528600B55111 /* InboxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InboxViewController.xib; sourceTree = "<group>"; };
 		CA4F9D811C96776B00B55111 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				CA73C9951C8815B200B77E5A /* AppDelegate.swift */,
 				CA73C9971C8815B200B77E5A /* ViewController.swift */,
 				CA73C9991C8815B200B77E5A /* Main.storyboard */,
+				CA0BAB3B1C9F999E00A57216 /* ReceiveMessageViewController.swift */,
 				CA4F9D811C96776B00B55111 /* MessageCell.swift */,
 				CA4F9D831C96844F00B55111 /* BaseTransition.swift */,
 				CA4F9D841C96844F00B55111 /* FadeTransition.swift */,
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA73C9981C8815B200B77E5A /* ViewController.swift in Sources */,
+				CA0BAB3C1C9F999E00A57216 /* ReceiveMessageViewController.swift in Sources */,
 				CA4F9D861C96844F00B55111 /* FadeTransition.swift in Sources */,
 				CA4F9D851C96844F00B55111 /* BaseTransition.swift in Sources */,
 				CA4F9D881C96885600B55111 /* MessageDetailsViewController.swift in Sources */,

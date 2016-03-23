@@ -17,8 +17,9 @@ class Message {
     var messageImage: UIImage?
     var liked: Bool
     var forwarded: Bool
+    var deleted: Bool
     
-    init(username: String, photo: UIImage?, content: String, messageImage: UIImage?, liked: Bool, forwarded: Bool) {
+    init(username: String, photo: UIImage?, content: String, messageImage: UIImage?, liked: Bool, forwarded: Bool, deleted: Bool) {
         
         self.username = username
         self.photo = photo
@@ -26,6 +27,7 @@ class Message {
         self.messageImage = messageImage
         self.liked = liked
         self.forwarded = forwarded
+        self.deleted = deleted
     
     }
 }
