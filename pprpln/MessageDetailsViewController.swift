@@ -23,11 +23,7 @@ class MessageDetailsViewController: UIViewController {
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     @IBAction func onTapBackButton(sender: AnyObject) {
         navigationController?.popViewControllerAnimated(true)
     }
@@ -49,31 +45,35 @@ class MessageDetailsViewController: UIViewController {
         alertController.addAction(cancelAction)
         presentViewController(alertController, animated: true, completion: nil)
 
-        
       
     }
     
     
-//    @IBAction func onTapForwardButton(sender: UIButton) {
-//        sender.selected = !sender.selected
-//        inboxViewController.onTapForwardButton(sender)
-//        
-//    }
-    
-//    @IBAction func onTapFavButton(sender: UIButton) {
-//        sender.selected = !sender.selected
-//        
-//        inboxViewController.onTapFavButton(self, button: sender)
-//        
-//    }
-    /*
-    // MARK: - Navigation
+    @IBAction func onTapForwardButton(sender: UIButton) {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        let toastLabel = UILabel(frame: CGRectMake(self.view.frame.size.width/2 - 150, self.view.frame.size.height-100, 300, 35))
+        
+        toastLabel.backgroundColor = UIColor.blackColor()
+        toastLabel.textColor = UIColor.whiteColor()
+        toastLabel.textAlignment = NSTextAlignment.Center;
+        self.view.addSubview(toastLabel)
+        toastLabel.text = "Message forwarded"
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+
+        
+        UIView.animateWithDuration(1.5, delay: 0.1, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+            toastLabel.alpha = 0.0
+            }, completion: { (Bool) -> Void in self.navigationController?.popViewControllerAnimated(true)})
+        
+        
     }
-    */
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
 }

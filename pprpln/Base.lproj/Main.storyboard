@@ -151,7 +151,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Airplane1"/>
                                 <connections>
-                                    <action selector="onTapFowardButton:" destination="tl9-Bs-dS0" eventType="touchUpInside" id="py9-Xa-UDZ"/>
+                                    <action selector="onTapForwardButton:" destination="tl9-Bs-dS0" eventType="touchUpInside" id="Ern-6f-wMK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="US2-XJ-f4n">
