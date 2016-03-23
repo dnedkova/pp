@@ -14,15 +14,21 @@ class ReceiveMessageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bar = self.navigationController?.navigationBar
-
-        bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        bar.shadowImage = UIImage()
+//        bar = self.navigationController?.navigationBar
+//
+//        bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        bar.backgroundColor = UIColor(white: 1.0, alpha: 0.0)
+//        bar.shadowImage = UIImage()
         
 
     }
     override func viewWillAppear(animated: Bool) {
         
+        
+        bar = self.navigationController?.navigationBar
+        
+        bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        bar.shadowImage = UIImage()
         
         bar.backgroundColor = UIColor(white: 1.0, alpha: 0.0)
         self.navigationItem.rightBarButtonItem?.image = UIImage(named:"Inbox.png")!.imageWithRenderingMode(.AlwaysOriginal)
@@ -35,17 +41,6 @@ class ReceiveMessageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillDisappear(animated: Bool) {
-
-        bar.backgroundColor = UIColor(white: 1.0, alpha: 0.0)
-    
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-    
-        
-        bar.backgroundColor = UIColor(white: 1.0, alpha: 0.9)
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

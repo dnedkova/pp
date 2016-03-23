@@ -49,16 +49,6 @@ class InboxViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.title = "Messages"
         
         self.navigationItem.rightBarButtonItem?.image = UIImage(named:"Heart.png")!.imageWithRenderingMode(.AlwaysOriginal)
-        
-        
-//
-////        let backButton = UIBarButtonItem(title: "< Back", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-////        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Chalkduster", size: 20)!], forState: UIControlState.Normal)
-//        let backButton = UIBarButtonItem(image: backArrow, style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-//        backButton.setBackgroundImage(backArrow, forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
-//        navigationItem.backBarButtonItem = backButton
-        
-//        self.navigationItem.backBarButtonItem = UIBarButtonItem(image: backArrow, style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     
         
 
@@ -148,9 +138,18 @@ class InboxViewController: UIViewController, UITableViewDataSource, UITableViewD
         backItem.setBackButtonBackgroundImage(backArrow, forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
         navigationItem.backBarButtonItem = backItem
         
-        UINavigationBar.appearance().barTintColor = UIColor(white: 0.0, alpha: 1.0)
+        destinationViewController.title = selectedMessage.username
+//        navigationController?.navigationBar.backgroundColor = UIColor(white: 1.0, alpha: 0.1)
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
+        navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
